@@ -222,3 +222,46 @@ body {
     .cards { flex-direction: column; }
     .hero { padding: 120px 20px 60px 20px; }
 }
+/* ===== Ajustes finais para posição do nome, typing e scroll offset ===== */
+
+/* Garante que o nome seja inline-block e centralizado corretamente */
+#hero-name {
+    display: inline-block;      /* evita que largura seja 100% e que translateX falhe */
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%); /* centraliza quando fixed */
+    /* já tem transition definida anteriormente */
+}
+
+/* Quando o nome ficar fixo no topo */
+.hero-name-top {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%); /* força centragem horizontalmente */
+    margin: 0;
+    display: inline-block;
+    z-index: 1002;
+    /* mantém o visual que você já tem (background, padding, blur) */
+}
+
+/* Garante que o typing fique centralizado sob o nome */
+#typing {
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cfd8ff;
+    /* min-height já existia; mantém para não pular layout */
+}
+
+/* Pequeno espaçamento extra no topo das seções para compensar o header fixo */
+.section {
+    scroll-margin-top: 110px; /* valor que ajuda a posicionar o título abaixo do header fixo */
+}
+
+/* Em telas menores, reduzir o scroll-margin-top */
+@media (max-width: 768px) {
+    .section { scroll-margin-top: 90px; }
+    .hero { padding: 160px 20px 80px 20px; } /* mantém o visual responsivo */
+}

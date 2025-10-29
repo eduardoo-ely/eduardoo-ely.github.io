@@ -1,113 +1,154 @@
 // ===============================
-// MENU MOBILE (Hamburger Toggle)
+// DOM helpers
 // ===============================
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-});
-
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
 // ===============================
-// EFEITO DE DIGITAÇÃO
+// Hamburguer (mobile)
 // ===============================
-const typingText = "Sou Suporte Técnico I na IXC Soft e futuro Analista de Infra e Dados, apaixonado por Cloud e desenvolvimento.";
-let i = 0;
+const hamburger = $('.hamburger');
+const navLinks = $('.nav-links');
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+}
 
-function type() {
-    if (i < typingText.length) {
-        document.getElementById('typing').innerHTML += typingText.charAt(i);
-        i++;
-        setTimeout(type, 45);
+// ===============================
+// Typing effect (starts on load)
+// ===============================
+const typingEl = $('#typing');
+const typingText = "Sou Suporte Técnico 1 na IXC Soft e futuro Analista de Infra e Dados, apaixonado por Cloud e desenvolvimento.";
+let ti = 0;
+function resetTyping() { typingEl.innerHTML = ''; ti = 0; }
+function typeTick() {
+    if (!typingEl) return;
+    if (ti < typingText.length) {
+        typingEl.innerHTML += typingText.charAt(ti);
+        ti++;
+        setTimeout(typeTick, 45);
     }
 }
-window.addEventListener("load", type);
-
-
-// ===============================
-// EFEITO: NOME SOBE PARA O TOPO
-// ===============================
-const heroName = document.getElementById('hero-name');
-const hero = document.querySelector('.hero');
-let nameMoved = false;
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 120 && !nameMoved) {
-        heroName.classList.add('hero-name-top');
-        hero.classList.add('shrink');
-        nameMoved = true;
-    } else if (window.scrollY <= 120 && nameMoved) {
-        heroName.classList.remove('hero-name-top');
-        hero.classList.remove('shrink');
-        nameMoved = false;
-    }
+window.addEventListener('load', () => {
+    resetTyping();
+    setTimeout(typeTick, 200); // pequeno delay pra hero aparecer
 });
 
+// ===============================
+// Nome sobe ao topo (vertical) — behavior robusto
+// ===============================
+const heroName = $('#hero-name');
+const hero = document.querySelector('.hero');
+let nameIsMoved = false;
+
+function updateHeroNameOnScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const threshold = 120; // quando rolar além disso, o nome sobe
+    if (scrollY > threshold && !nameIsMoved) {
+        heroName.classList.add('hero-name-top');
+        if (hero) hero.classList.add('shrink');
+        nameIsMoved = true;
+    } else if (scrollY <= threshold && nameIsMoved) {
+        heroName.classList.remove('hero-name-top');
+        if (hero) hero.classList.remove('shrink');
+        nameIsMoved = false;
+    }
+}
+window.addEventListener('scroll', updateHeroNameOnScroll);
+window.addEventListener('resize', updateHeroNameOnScroll); // recalcula comportamento se mudar tamanho
 
 // ===============================
-// SCROLL SUAVE ENTRE SEÇÕES
+// Smooth scroll with header offset
 // ===============================
-document.querySelectorAll('.nav-links a').forEach(link => {
+function scrollToWithOffset(targetEl) {
+    if (!targetEl) return;
+    // calcula offset dinâmico baseado no nome fixo (quando estiver fixo) ou num valor padrão
+    const nameFixed = heroName && heroName.classList.contains('hero-name-top');
+    const headerHeight = nameFixed ? (heroName.getBoundingClientRect().height + 28) : 24;
+    const targetRect = targetEl.getBoundingClientRect();
+    const absoluteElementTop = window.pageYOffset + targetRect.top;
+    const scrollTo = absoluteElementTop - headerHeight;
+    window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+}
+
+// intercepta os links do menu (se existirem)
+$$('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
+        const href = link.getAttribute('href');
+        const target = document.querySelector(href);
+        if (target) {
+            scrollToWithOffset(target);
+        }
+        // fecha menu mobile se aberto
+        if (navLinks && navLinks.classList.contains('open')) navLinks.classList.remove('open');
+    });
+});
 
-        // Fecha menu mobile após clicar
-        if (navLinks.classList.contains('open')) {
-            navLinks.classList.remove('open');
+// também, se houver links internos fora do nav, aplica o mesmo comportamento:
+$$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            scrollToWithOffset(target);
         }
     });
 });
 
-
 // ===============================
-// FADE-IN DAS SEÇÕES
+// Fade-in das seções (IntersectionObserver)
 // ===============================
 const sections = document.querySelectorAll('.section');
-const observerOptions = { threshold: 0.3 };
+if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.28 });
+    sections.forEach(s => obs.observe(s));
+} else {
+    // fallback
+    sections.forEach(s => s.classList.add('visible'));
+}
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
+// ===============================
+// Skills progress animation
+// ===============================
+const skillsSection = $('#habilidades');
+const progressBars = $$('.progress');
+if (skillsSection && 'IntersectionObserver' in window) {
+    const skillObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                progressBars.forEach(bar => {
+                    const w = bar.getAttribute('data-width') || bar.dataset.width || '60%';
+                    bar.style.width = w;
+                });
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.45 });
+    skillObs.observe(skillsSection);
+} else {
+    // se não houver seção, apenas preenche nothing
+    progressBars.forEach(bar => {
+        const w = bar.getAttribute('data-width') || bar.dataset.width || '60%';
+        bar.style.width = w;
     });
-}, observerOptions);
-
-sections.forEach(section => observer.observe(section));
-
+}
 
 // ===============================
-// ANIMAÇÃO DAS SKILLS
-// ===============================
-const skillsSection = document.getElementById('habilidades');
-const progressBars = document.querySelectorAll('.progress');
-
-const skillsObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            progressBars.forEach(bar => {
-                bar.style.width = bar.getAttribute('data-width');
-            });
-            obs.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-if (skillsSection) skillsObserver.observe(skillsSection);
-
-
-// ===============================
-// NAVBAR MUDA COR AO ROLAR
+// Navbar color
 // ===============================
 const nav = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
+if (nav) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+}
