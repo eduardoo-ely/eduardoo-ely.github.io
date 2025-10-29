@@ -5,12 +5,24 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
 });
 
-// Efeito do nome subindo pro topo sem sobrepor o conteúdo
+// Efeito de digitação
+const typingText = "Sou Suporte Técnico 1 na IXC Soft e futuro Analista de Infra e Dados, apaixonado por Cloud e desenvolvimento.";
+let i = 0;
+function type() {
+    if (i < typingText.length) {
+        document.getElementById('typing').innerHTML += typingText.charAt(i);
+        i++;
+        setTimeout(type, 45);
+    }
+}
+type();
+
+// Nome sobe pro topo suavemente ao rolar
 const heroName = document.getElementById('hero-name');
 const hero = document.querySelector('.hero');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 120) {
         heroName.classList.add('hero-name-top');
         hero.classList.add('shrink');
     } else {
@@ -44,17 +56,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 sections.forEach(section => observer.observe(section));
 
-// Animação de digitação no hero
-const typingText = "Sou Suporte Técnico 1 na IXC Soft e futuro Analista de Infra e Dados, apaixonado por Cloud e desenvolvimento.";
-let i = 0;
-function type() {
-    if(i < typingText.length){
-        document.getElementById('typing').innerHTML += typingText.charAt(i);
-        i++;
-        setTimeout(type, 50); // velocidade da digitação
-    }
-}
-type();
 
 // Progress bars animando ao entrar na seção
 const skillsSection = document.getElementById('habilidades');
