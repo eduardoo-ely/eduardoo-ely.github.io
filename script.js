@@ -1,28 +1,21 @@
-// Hamburger toggle para mobile
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-});
-
-// Scroll suave para as seções
+// === SCROLL SUAVE COM AJUSTE DO OFFSET ===
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-        if(navLinks.classList.contains('open')){
-            navLinks.classList.remove('open'); // Fecha menu mobile
-        }
+        const yOffset = -80; // faz parar um pouco antes do título
+        const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        if (navLinks.classList.contains('open')) navLinks.classList.remove('open');
     });
 });
 
-// Fade-in das seções
+// === FADE-IN DAS SEÇÕES ===
 const sections = document.querySelectorAll('.section');
 const observerOptions = { threshold: 0.3 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
         }
@@ -30,24 +23,12 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 sections.forEach(section => observer.observe(section));
 
-// Animação de digitação no hero
-const typingText = "Sou Suporte Técnico 1 na IXC Soft e futuro Analista de Infra e Dados, apaixonado por Cloud e desenvolvimento.";
-let i = 0;
-function type() {
-    if(i < typingText.length){
-        document.getElementById('typing').innerHTML += typingText.charAt(i);
-        i++;
-        setTimeout(type, 50); // velocidade da digitação
-    }
-}
-type();
-
-// Progress bars animando ao entrar na seção
+// === ANIMAÇÃO DAS BARRAS DE HABILIDADE ===
 const skillsSection = document.getElementById('habilidades');
 const progressBars = document.querySelectorAll('.progress');
 const skillsObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             progressBars.forEach(bar => {
                 bar.style.width = bar.getAttribute('data-width');
             });
@@ -57,10 +38,10 @@ const skillsObserver = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.5 });
 skillsObserver.observe(skillsSection);
 
-// Navbar muda cor ao rolar
+// === NAVBAR MUDA COR AO ROLAR ===
 const nav = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 50){
+    if (window.scrollY > 50) {
         nav.classList.add('scrolled');
     } else {
         nav.classList.remove('scrolled');
