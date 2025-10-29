@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt‑br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo de Paula | Portfólio</title>
+    <meta charset="UTF‑8">
+    <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+    <title>Eduardo de Paula | Desenvolvedor & Suporte TI</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body id="top">
 
-<!-- Navbar fixa -->
 <nav class="navbar">
     <div class="container">
-        <div class="logo">Eduardo de Paula</div>
+        <div class="logo">Eduardo de Paula</div>
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#experiencia">Experiência</a></li>
@@ -21,75 +20,78 @@
             <li><a href="#habilidades">Habilidades</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
     </div>
 </nav>
 
-<!-- Hero animado -->
 <header class="hero">
-    <div class="container">
-        <h1>Eduardo de Paula</h1>
+    <div class="container hero‐content">
+        <h1>Eduardo de Paula</h1>
         <p id="typing"></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/eduardoo-ely" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/eduardoo-ely" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:edaurdooelly@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:seuemail@exemplo.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </header>
 
-<!-- Sobre mim -->
-<section id="sobre" class="container section">
+<section id="sobre" class="container section fade-in">
     <h2>Sobre mim</h2>
-    <p>Sou estudante de Ciência da Computação e profissional de Suporte Técnico, com experiência em Node.js, Angular, MongoDB, PostgreSQL e desenvolvimento de apps como o Reutiliza e extensões Chrome. Busco aprendizado em tecnologias modernas como Neo4j, AWS e Azure.</p>
+    <p>Sou estudante de Ciência da Computação na Unochapecó e atuo há mais de 9 meses como Analista de Suporte de TI na Transportadora Lunardi. Minha trajetória inclui suporte técnico, hardware, redes, e agora desenvolvimento frontend/back‑end com foco em soluções práticas e impacto real.</p>
+    <p>Tenho paixão por lógica, automatização, otimização e estou sempre estudando tecnologias modernas. Faço apps, extensões Chrome, e projetos pessoais que reforçam minha habilidade de transformar ideias em código.</p>
 </section>
 
-<!-- Experiência -->
-<section id="experiencia" class="container section">
-    <h2>Experiência</h2>
+<section id="experiencia" class="container section fade-in">
+    <h2>Experiência Profissional & Projetos</h2>
     <div class="cards">
         <div class="card">
-            <h3>Suporte Técnico 1 – IXC Soft</h3>
-            <p>Atuação com Node.js, Angular, MongoDB, PostgreSQL, Azure e suporte a clientes.</p>
+            <h3>Analista de Suporte de TI – Transportadora Lunardi (9 meses)</h3>
+            <p>Atuação em redes, hardware, servidores, virtualização, suporte aos usuários, manutenção de infraestrutura e integração com equipes de desenvolvimento.</p>
         </div>
         <div class="card">
-            <h3>Projetos Próprios</h3>
-            <p>Desenvolvimento de apps e extensões Chrome, integração de APIs, mapas interativos e plataformas de gestão de resíduos.</p>
+            <h3>Suporte Técnico 1 – IXC Soft</h3>
+            <p>Trabalho com Node.js, Angular, MongoDB, PostgreSQL, Azure Cloud para atendimento a clientes e resolução de desafios técnicos.</p>
+        </div>
+        <div class="card">
+            <h3>Projetos Próprios – “Reutiliza” & “Opa Reminders”</h3>
+            <p>Desenvolvi o app “Reutiliza” (reciclagem de materiais) e a extensão “Opa Reminders” para Chrome. Usei Angular + TypeScript, integração de mapas (Leaflet), backend Node.js, banco de dados e deploy em cloud.</p>
         </div>
     </div>
 </section>
 
-<!-- Projetos -->
-<section id="projetos" class="container section">
-    <h2>Projetos</h2>
+<section id="projetos" class="container section fade-in">
+    <h2>Projetos em Destaque</h2>
     <ul class="project-list">
-        <li><a href="https://github.com/eduardoo-ely/reutiliza" target="_blank">Reutiliza App</a> – Plataforma de reciclagem de materiais</li>
-        <li><a href="https://github.com/eduardoo-ely/opa-reminders" target="_blank">Opa Reminders</a> – Extensão Chrome de lembretes</li>
+        <li><a href="https://github.com/eduardoo-ely/reutiliza" target="_blank">Reutiliza App</a> – Plataforma que conecta usuários à coleta de materiais recicláveis.</li>
+        <li><a href="https://github.com/eduardoo-ely/opa-reminders" target="_blank">Opa Reminders</a> – Extensão Chrome focada em produtividade, lembretes e automação.</li>
+        <li><a href="https://github.com/eduardoo-ely" target="_blank">Mais projetos open‑source</a> – Contribuições, ferramentas utilitárias e protótipos exploratórios.</li>
     </ul>
 </section>
 
-<!-- Habilidades -->
-<section id="habilidades" class="container section">
-    <h2>Habilidades</h2>
+<section id="habilidades" class="container section fade-in">
+    <h2>Habilidades Técnicas</h2>
     <div class="skills">
-        <div class="skill"><span>Node.js</span><div class="bar"><div class="progress" style="width:80%"></div></div></div>
-        <div class="skill"><span>Angular</span><div class="bar"><div class="progress" style="width:75%"></div></div></div>
-        <div class="skill"><span>MongoDB</span><div class="bar"><div class="progress" style="width:70%"></div></div></div>
-        <div class="skill"><span>PostgreSQL</span><div class="bar"><div class="progress" style="width:70%"></div></div></div>
-        <div class="skill"><span>Neo4j</span><div class="bar"><div class="progress" style="width:60%"></div></div></div>
-        <div class="skill"><span>Git & GitHub</span><div class="bar"><div class="progress" style="width:85%"></div></div></div>
+        <div class="skill"><span>Node.js</span><div class="bar"><div class="progress" data‑width="80%"></div></div></div>
+        <div class="skill"><span>Angular & TypeScript</span><div class="bar"><div class="progress" data‑width="75%"></div></div></div>
+        <div class="skill"><span>MongoDB</span><div class="bar"><div class="progress" data‑width="70%"></div></div></div>
+        <div class="skill"><span>PostgreSQL</span><div class="bar"><div class="progress" data‑width="70%"></div></div></div>
+        <div class="skill"><span>Neo4j</span><div class="bar"><div class="progress" data‑width="60%"></div></div></div>
+        <div class="skill"><span>Git & GitHub</span><div class="bar"><div class="progress" data‑width="85%"></div></div></div>
+        <div class="skill"><span>AWS / Azure (Cloud)</span><div class="bar"><div class="progress" data‑width="65%"></div></div></div>
+        <div class="skill"><span>Desenvolvimento Web & Extensões</span><div class="bar"><div class="progress" data‑width="80%"></div></div></div>
     </div>
 </section>
 
-<!-- Contato -->
-<section id="contato" class="container section">
-    <h2>Contato</h2>
+<section id="contato" class="container section fade-in">
+    <h2>Vamos conversar?</h2>
+    <p>Estou aberto a oportunidades, freelance ou colaborações. Vamos transformar ideias em código juntos!</p>
     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/eduardoo-ely" target="_blank">LinkedIn</a></p>
     <p><i class="fab fa-github"></i> <a href="https://github.com/eduardoo-ely" target="_blank">GitHub</a></p>
     <p><i class="fas fa-envelope"></i> <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
 </section>
 
-<!-- Footer -->
-<footer>
+<footer class="footer">
     <div class="container">
         <p>&copy; 2025 Eduardo de Paula. Todos os direitos reservados.</p>
         <a href="#top" class="top-btn"><i class="fas fa-arrow-up"></i></a>
