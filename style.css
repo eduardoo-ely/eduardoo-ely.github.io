@@ -22,21 +22,19 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 15, 25, 0.85);
+    background: var(--blue-dark);
     color: white;
-    backdrop-filter: blur(8px);
     z-index: 1000;
     transition: background 0.3s ease;
-    padding: 15px 0;
 }
 .navbar.scrolled {
-    background: rgba(10, 15, 25, 0.95);
+    background: var(--blue-tech);
 }
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 15px 20px;
 }
 .navbar .logo {
     font-weight: 700;
@@ -78,24 +76,23 @@ body {
     background: var(--blue-dark);
     color: white;
     text-align: center;
-    padding: 200px 20px 120px 20px;
+    padding: 180px 20px 120px 20px;
     position: relative;
     overflow: hidden;
-    transition: padding 0.8s ease;
+    transition: padding 0.5s ease;
 }
 
-/* NOME CENTRALIZADO */
+/* Nome centralizado inicialmente */
 #hero-name {
     font-size: 3.2em;
     font-weight: 700;
     color: white;
-    position: relative;
     transition: all 0.8s ease-in-out;
+    position: relative;
     z-index: 2;
-    transform: translateY(0);
 }
 
-/* NOME FIXO NO TOPO QUANDO SOBE */
+/* Quando rolar, o nome sobe suavemente */
 .hero-name-top {
     position: fixed;
     top: 15px;
@@ -103,39 +100,62 @@ body {
     transform: translateX(-50%);
     font-size: 1.8em;
     color: white;
-    background: rgba(15, 20, 30, 0.75);
-    padding: 8px 20px;
-    border-radius: 12px;
+    background: rgba(10, 15, 25, 0.7);
     backdrop-filter: blur(6px);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.4);
-    transition: all 0.5s ease-in-out;
+    padding: 8px 20px;
+    border-radius: 10px;
     z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* HERO DIMINUI O PADDING QUANDO O NOME SOBE */
+/* Quando o nome sobe, o hero reduz padding */
 .hero.shrink {
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
-/* CONTEÚDO HERO */
+/* Garante que o texto e botões fiquem abaixo do nome fixo */
 .hero-content {
     position: relative;
     z-index: 1;
-    transition: margin-top 0.5s ease;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-/* TEXTO COM TYPING */
-#typing {
+.hero p#typing {
     font-size: 1.2em;
     max-width: 700px;
     margin: 20px auto;
     line-height: 1.6;
-    color: #cfd8ff;
-    min-height: 60px;
 }
 
-/* BOTÕES SOCIAIS */
+/* Navbar visual */
+.navbar {
+    background: rgba(10, 15, 25, 0.85);
+    color: white;
+    backdrop-filter: blur(8px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 15, 25, 0.95);
+}
+
+@keyframes hero-drop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#typing {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+}
 .social-links {
     margin-top: 20px;
 }
@@ -157,7 +177,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* SEÇÕES */
+/* SECTIONS */
 .section {
     padding: 70px 20px;
     margin-top: 60px;
@@ -171,7 +191,6 @@ body {
 .section.visible { opacity: 1; transform: translateY(0); }
 .section h2 { color: var(--blue-tech); font-size: 2em; margin-bottom: 20px; }
 
-/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -190,7 +209,7 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
-/* PROJETOS */
+/* PROJECTS */
 .project-list li { margin-bottom: 12px; }
 .project-list a {
     color: var(--blue-tech);
@@ -221,47 +240,4 @@ body {
 @media(max-width:768px){
     .cards { flex-direction: column; }
     .hero { padding: 120px 20px 60px 20px; }
-}
-/* ===== Ajustes finais para posição do nome, typing e scroll offset ===== */
-
-/* Garante que o nome seja inline-block e centralizado corretamente */
-#hero-name {
-    display: inline-block;      /* evita que largura seja 100% e que translateX falhe */
-    text-align: center;
-    left: 50%;
-    transform: translateX(-50%); /* centraliza quando fixed */
-    /* já tem transition definida anteriormente */
-}
-
-/* Quando o nome ficar fixo no topo */
-.hero-name-top {
-    position: fixed;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%); /* força centragem horizontalmente */
-    margin: 0;
-    display: inline-block;
-    z-index: 1002;
-    /* mantém o visual que você já tem (background, padding, blur) */
-}
-
-/* Garante que o typing fique centralizado sob o nome */
-#typing {
-    text-align: center !important;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #cfd8ff;
-    /* min-height já existia; mantém para não pular layout */
-}
-
-/* Pequeno espaçamento extra no topo das seções para compensar o header fixo */
-.section {
-    scroll-margin-top: 110px; /* valor que ajuda a posicionar o título abaixo do header fixo */
-}
-
-/* Em telas menores, reduzir o scroll-margin-top */
-@media (max-width: 768px) {
-    .section { scroll-margin-top: 90px; }
-    .hero { padding: 160px 20px 80px 20px; } /* mantém o visual responsivo */
 }

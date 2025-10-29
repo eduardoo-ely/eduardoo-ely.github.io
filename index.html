@@ -7,18 +7,27 @@
 
     <!-- Fonte moderna: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body id="top">
 
-<!-- CABEÇALHO FIXO AUTOMÁTICO -->
-<header id="floating-header">
-    <h1>Eduardo de Paula</h1>
-</header>
+<!-- NAVBAR sem logo -->
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</nav>
 
-<!-- HERO CENTRAL -->
-<section class="hero">
+<header class="hero">
     <div class="container hero-content">
         <h1 id="hero-name">Eduardo de Paula</h1>
         <p id="typing"></p>
@@ -28,7 +37,8 @@
             <a href="mailto:eduardooelly@gmail.com" class="btn"><i class="fas fa-envelope"></i> Contato</a>
         </div>
     </div>
-</section>
+</header>
+
 
 <section id="sobre" class="container section fade-in">
     <h2>Sobre mim</h2>
