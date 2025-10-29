@@ -1,17 +1,17 @@
-{
+/* RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
     background: #f5f6fa;
+    color: #333;
+    scroll-behavior: smooth;
 }
 
-/* Navbar fixa */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -20,37 +20,17 @@ body {
     color: white;
     z-index: 1000;
 }
-
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
 }
-
-.navbar .logo {
-    font-weight: 700;
-    font-size: 1.3em;
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.navbar .nav-links li {
-    margin-left: 20px;
-}
-
-.navbar .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.navbar .nav-links a:hover {
-    text-decoration: underline;
-}
+.navbar .logo { font-weight: 700; font-size: 1.3em; }
+.navbar .nav-links { list-style: none; display: flex; }
+.navbar .nav-links li { margin-left: 20px; }
+.navbar .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+.navbar .nav-links a:hover { text-decoration: underline; }
 
 /* Hero */
 .hero {
@@ -59,106 +39,39 @@ body {
     text-align: center;
     padding: 150px 20px 80px 20px;
 }
-
-.hero h1 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.hero .social-links a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5em;
-}
-
-.hero .social-links a:hover {
-    color: #ffdd57;
-}
+.hero h1 { font-size: 2.8em; margin-bottom: 10px; }
+.hero p { font-size: 1.2em; margin-bottom: 20px; min-height: 25px; }
+.hero .social-links a { color: white; margin: 0 10px; font-size: 1.5em; }
+.hero .social-links a:hover { color: #ffdd57; }
 
 /* Seções */
-.section {
-    padding: 60px 20px;
-    margin-top: 60px;
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-}
+.section { padding: 60px 20px; margin-top: 60px; background: white; border-radius: 10px; margin-bottom: 20px; }
+.container { max-width: 900px; margin: auto; }
 
 /* Cards de experiência */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    flex: 1 1 400px;
-    background: #f1f3f6;
-    padding: 20px;
-    border-radius: 10px;
-}
+.cards { display: flex; flex-wrap: wrap; gap: 20px; }
+.card { flex: 1 1 400px; background: #f1f3f6; padding: 20px; border-radius: 10px; transition: transform 0.3s; }
+.card:hover { transform: translateY(-5px); }
 
 /* Projetos */
-.project-list li {
-    margin-bottom: 10px;
-}
-
-.project-list a {
-    color: #0d6efd;
-    text-decoration: none;
-}
-
-.project-list a:hover {
-    text-decoration: underline;
-}
+.project-list li { margin-bottom: 10px; }
+.project-list a { color: #0d6efd; text-decoration: none; }
+.project-list a:hover { text-decoration: underline; }
 
 /* Habilidades */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skills span {
-    background: #0d6efd;
-    color: white;
-    padding: 7px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-}
+.skills { display: flex; flex-direction: column; gap: 15px; }
+.skill span { font-weight: 500; }
+.bar { background: #ddd; border-radius: 10px; overflow: hidden; height: 15px; margin-top: 5px; }
+.progress { background: #0d6efd; height: 100%; width: 0; border-radius: 10px; transition: width 1.5s; }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-    margin-top: 40px;
-}
+footer { text-align: center; padding: 20px; background: #333; color: white; position: relative; }
+.top-btn { color: white; font-size: 1.2em; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); text-decoration: none; }
 
 /* Responsividade */
 @media(max-width: 768px){
-    .cards {
-        flex-direction: column;
-    }
-    .navbar .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .navbar .nav-links li {
-        margin-left: 0;
-    }
-    .hero {
-        padding: 120px 20px 60px 20px;
-    }
+    .cards { flex-direction: column; }
+    .navbar .nav-links { flex-direction: column; gap: 10px; }
+    .navbar .nav-links li { margin-left: 0; }
+    .hero { padding: 120px 20px 60px 20px; }
 }

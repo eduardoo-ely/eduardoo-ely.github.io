@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo de Paula | Desenvolvedor</title>
+    <title>Eduardo de Paula | Portfólio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,15 +24,15 @@
     </div>
 </nav>
 
-<!-- Hero / Header -->
+<!-- Hero animado -->
 <header class="hero">
     <div class="container">
         <h1>Eduardo de Paula</h1>
-        <p>Suporte Técnico & Desenvolvedor | Chapecó, SC</p>
+        <p id="typing"></p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/eduardoo-ely" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/eduardoo-ely" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:seuemail@exemplo.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:edaurdooelly@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 </header>
@@ -40,7 +40,7 @@
 <!-- Sobre mim -->
 <section id="sobre" class="container section">
     <h2>Sobre mim</h2>
-    <p>Sou estudante de Ciência da Computação e profissional de Suporte Técnico, com experiência em Node.js, Angular, MongoDB, PostgreSQL e desenvolvimento de apps práticos, como o Reutiliza e extensões Chrome. Busco sempre aprendizado em tecnologias modernas como Neo4j, AWS e Azure.</p>
+    <p>Sou estudante de Ciência da Computação e profissional de Suporte Técnico, com experiência em Node.js, Angular, MongoDB, PostgreSQL e desenvolvimento de apps como o Reutiliza e extensões Chrome. Busco aprendizado em tecnologias modernas como Neo4j, AWS e Azure.</p>
 </section>
 
 <!-- Experiência -->
@@ -49,11 +49,11 @@
     <div class="cards">
         <div class="card">
             <h3>Suporte Técnico 1 – IXC Soft</h3>
-            <p>Atuação com Node.js, Angular, MongoDB, PostgreSQL, Azure e suporte a clientes. Solução de problemas, manutenção e integração de sistemas.</p>
+            <p>Atuação com Node.js, Angular, MongoDB, PostgreSQL, Azure e suporte a clientes.</p>
         </div>
         <div class="card">
             <h3>Projetos Próprios</h3>
-            <p>Desenvolvimento de apps e extensões Chrome, como Reutiliza e Opa Reminders, integração de APIs, mapas interativos e plataformas de gestão de resíduos.</p>
+            <p>Desenvolvimento de apps e extensões Chrome, integração de APIs, mapas interativos e plataformas de gestão de resíduos.</p>
         </div>
     </div>
 </section>
@@ -71,14 +71,12 @@
 <section id="habilidades" class="container section">
     <h2>Habilidades</h2>
     <div class="skills">
-        <span>Node.js</span>
-        <span>Angular</span>
-        <span>MongoDB</span>
-        <span>PostgreSQL</span>
-        <span>Neo4j</span>
-        <span>Git & GitHub</span>
-        <span>AWS / Azure</span>
-        <span>Desenvolvimento Web</span>
+        <div class="skill"><span>Node.js</span><div class="bar"><div class="progress" style="width:80%"></div></div></div>
+        <div class="skill"><span>Angular</span><div class="bar"><div class="progress" style="width:75%"></div></div></div>
+        <div class="skill"><span>MongoDB</span><div class="bar"><div class="progress" style="width:70%"></div></div></div>
+        <div class="skill"><span>PostgreSQL</span><div class="bar"><div class="progress" style="width:70%"></div></div></div>
+        <div class="skill"><span>Neo4j</span><div class="bar"><div class="progress" style="width:60%"></div></div></div>
+        <div class="skill"><span>Git & GitHub</span><div class="bar"><div class="progress" style="width:85%"></div></div></div>
     </div>
 </section>
 
@@ -87,15 +85,17 @@
     <h2>Contato</h2>
     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/eduardoo-ely" target="_blank">LinkedIn</a></p>
     <p><i class="fab fa-github"></i> <a href="https://github.com/eduardoo-ely" target="_blank">GitHub</a></p>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:eduardooelly@gmail.com">eduardooelly@gmail.com</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
 </section>
 
 <!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2025 Eduardo de Paula. Todos os direitos reservados.</p>
+        <a href="#top" class="top-btn"><i class="fas fa-arrow-up"></i></a>
     </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
