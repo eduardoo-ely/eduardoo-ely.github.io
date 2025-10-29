@@ -80,13 +80,33 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 #hero-name {
     font-size: 3em;
     font-weight: 700;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: hero-drop 1s forwards;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease;
+    color: var(--cyan);
 }
+
+/* Classe que sobe o nome para o topo */
+.hero-name-top {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    z-index: 1001;
+}
+
+/* Ajuste no padding do hero depois que o nome sobe */
+.hero.shrink {
+    padding-top: 100px;
+}
+
 @keyframes hero-drop {
     to {
         opacity: 1;

@@ -5,6 +5,20 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
 });
 
+// Nome sobe para o topo ao rolar
+const heroName = document.getElementById('hero-name');
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+        heroName.classList.add('hero-name-top');
+        hero.classList.add('shrink');
+    } else {
+        heroName.classList.remove('hero-name-top');
+        hero.classList.remove('shrink');
+    }
+});
+
 // Scroll suave para as seções
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
