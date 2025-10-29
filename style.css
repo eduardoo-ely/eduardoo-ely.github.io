@@ -22,19 +22,21 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--blue-dark);
+    background: rgba(10, 15, 25, 0.85);
     color: white;
+    backdrop-filter: blur(8px);
     z-index: 1000;
     transition: background 0.3s ease;
+    padding: 15px 0;
 }
 .navbar.scrolled {
-    background: var(--blue-tech);
+    background: rgba(10, 15, 25, 0.95);
 }
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 20px;
 }
 .navbar .logo {
     font-weight: 700;
@@ -71,6 +73,7 @@ body {
     .hamburger { display: block; }
 }
 
+/* HERO */
 .hero {
     background: var(--blue-dark);
     color: white;
@@ -81,7 +84,7 @@ body {
     transition: padding 0.8s ease;
 }
 
-/* nome centralizado e fixo no início */
+/* NOME CENTRALIZADO */
 #hero-name {
     font-size: 3.2em;
     font-weight: 700;
@@ -92,33 +95,37 @@ body {
     transform: translateY(0);
 }
 
-/* quando o nome "sobe" */
+/* NOME FIXO NO TOPO QUANDO SOBE */
 .hero-name-top {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
     font-size: 1.8em;
     color: white;
-    background: rgba(15, 20, 30, 0.6);
+    background: rgba(15, 20, 30, 0.75);
     padding: 8px 20px;
     border-radius: 12px;
     backdrop-filter: blur(6px);
     box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+    transition: all 0.5s ease-in-out;
+    z-index: 1001;
 }
 
-/* faz o hero diminuir o padding quando o nome sobe */
+/* HERO DIMINUI O PADDING QUANDO O NOME SOBE */
 .hero.shrink {
     padding-top: 120px;
 }
 
+/* CONTEÚDO HERO */
 .hero-content {
     position: relative;
     z-index: 1;
     transition: margin-top 0.5s ease;
+    margin-top: 20px;
 }
 
-/* texto com typing */
+/* TEXTO COM TYPING */
 #typing {
     font-size: 1.2em;
     max-width: 700px;
@@ -128,35 +135,7 @@ body {
     min-height: 60px;
 }
 
-/* Navbar visual */
-.navbar {
-    background: rgba(10, 15, 25, 0.85);
-    color: white;
-    backdrop-filter: blur(8px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    transition: background 0.3s ease;
-}
-
-.navbar.scrolled {
-    background: rgba(10, 15, 25, 0.95);
-}
-
-@keyframes hero-drop {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-#typing {
-    font-size: 1.2em;
-    margin: 20px 0;
-    min-height: 30px;
-}
+/* BOTÕES SOCIAIS */
 .social-links {
     margin-top: 20px;
 }
@@ -178,7 +157,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 .section {
     padding: 70px 20px;
     margin-top: 60px;
@@ -192,6 +171,7 @@ body {
 .section.visible { opacity: 1; transform: translateY(0); }
 .section h2 { color: var(--blue-tech); font-size: 2em; margin-bottom: 20px; }
 
+/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -210,7 +190,7 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
-/* PROJECTS */
+/* PROJETOS */
 .project-list li { margin-bottom: 12px; }
 .project-list a {
     color: var(--blue-tech);
