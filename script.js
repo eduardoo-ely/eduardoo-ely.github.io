@@ -5,12 +5,12 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
 });
 
-// Nome sobe para o topo ao rolar
+// Efeito do nome subindo pro topo sem sobrepor o conteúdo
 const heroName = document.getElementById('hero-name');
 const hero = document.querySelector('.hero');
 
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 50){
+    if (window.scrollY > 100) {
         heroName.classList.add('hero-name-top');
         hero.classList.add('shrink');
     } else {

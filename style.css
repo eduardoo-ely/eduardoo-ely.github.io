@@ -76,35 +76,73 @@ body {
     background: var(--blue-dark);
     color: white;
     text-align: center;
-    padding: 180px 20px 100px 20px;
+    padding: 180px 20px 120px 20px;
     position: relative;
     overflow: hidden;
+    transition: padding 0.5s ease;
 }
 
+/* Nome centralizado inicialmente */
 #hero-name {
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: 700;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s ease;
-    color: var(--cyan);
+    color: white;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 
-/* Classe que sobe o nome para o topo */
+/* Quando rolar, o nome sobe suavemente */
 .hero-name-top {
     position: fixed;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2em;
+    font-size: 1.8em;
+    color: white;
+    background: rgba(10, 15, 25, 0.7);
+    backdrop-filter: blur(6px);
+    padding: 8px 20px;
+    border-radius: 10px;
     z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Ajuste no padding do hero depois que o nome sobe */
+/* Quando o nome sobe, o hero reduz padding */
 .hero.shrink {
     padding-top: 100px;
+}
+
+/* Garante que o texto e botões fiquem abaixo do nome fixo */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.hero p#typing {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* Navbar visual */
+.navbar {
+    background: rgba(10, 15, 25, 0.85);
+    color: white;
+    backdrop-filter: blur(8px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 15, 25, 0.95);
 }
 
 @keyframes hero-drop {
