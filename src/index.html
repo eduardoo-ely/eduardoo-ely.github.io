@@ -3,641 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo de Paula - Full-Stack Developer</title>
+    <title>Eduardo de Paula - Desenvolvedor em Transição para Dados</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-dark: #0f172a;
-            --bg-darker: #1e293b;
-            --green: #22c55e;
-            --green-dark: #10b981;
-            --red: #ef4444;
-            --blue: #3b82f6;
-            --cyan: #22d3ee;
-            --text-light: #cbd5e1;
-            --text-gray: #94a3b8;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--bg-dark) 100%);
-            color: white;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .nav-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--cyan), var(--blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--cyan);
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero-background {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(34, 197, 94, 0.1), transparent);
-        }
-
-        .code-rain {
-            position: absolute;
-            inset: 0;
-            opacity: 0.1;
-            font-family: 'Courier New', monospace;
-            color: var(--green);
-            font-size: 0.75rem;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .code-item {
-            position: absolute;
-            animation: float 3s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); opacity: 0.3; }
-            50% { transform: translateY(-20px); opacity: 0.6; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 1200px;
-            padding: 0 2rem;
-        }
-
-        .avatar {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 2rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--green), var(--cyan), var(--blue));
-            padding: 4px;
-            animation: pulse 2s infinite;
-        }
-
-        .avatar-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: var(--bg-darker);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--green), var(--cyan), var(--blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            color: var(--text-gray);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-            animation: fadeInUp 1.4s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .highlight {
-            font-weight: 600;
-        }
-
-        .highlight-green { color: var(--green); }
-        .highlight-red { color: var(--red); }
-        .highlight-blue { color: var(--blue); }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1.6s ease-out;
-        }
-
-        .btn-primary {
-            padding: 0.875rem 2rem;
-            background: linear-gradient(to right, var(--green), var(--green-dark));
-            border-radius: 50px;
-            border: none;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: transform 0.3s;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-secondary {
-            padding: 0.875rem 2rem;
-            border: 2px solid var(--green);
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(34, 197, 94, 0.1);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            font-size: 2rem;
-            color: var(--green);
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        /* Sections */
-        .section {
-            padding: 8rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-dark {
-            background: rgba(15, 23, 42, 0.5);
-            width: 100%;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 4rem;
-            background: linear-gradient(to right, var(--green), var(--cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .stack-card {
-            background: linear-gradient(135deg, rgba(51, 65, 85, 0.5), rgba(30, 41, 59, 0.5));
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .stack-title {
-            font-size: 1.5rem;
-            color: var(--green);
-            margin-bottom: 1.5rem;
-        }
-
-        .stack-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem;
-            background: rgba(51, 65, 85, 0.5);
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stack-icon {
-            font-size: 1.5rem;
-        }
-
-        .stack-label {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .stack-tech {
-            font-size: 0.875rem;
-            color: var(--text-gray);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            background: rgba(51, 65, 85, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-
-        .skill-category:hover {
-            border-color: rgba(34, 197, 94, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .skill-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-icon {
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            font-size: 1.75rem;
-            background: rgba(34, 197, 94, 0.2);
-        }
-
-        .skill-category-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-name {
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .skill-level {
-            font-size: 0.75rem;
-            color: var(--text-gray);
-        }
-
-        .skill-bar {
-            height: 0.5rem;
-            background: rgba(51, 65, 85, 0.5);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(to right, var(--green), var(--green-dark));
-            border-radius: 10px;
-            transition: width 1.5s ease-out;
-            width: 0;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            position: relative;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            background: rgba(51, 65, 85, 0.3);
-            transition: all 0.5s;
-            overflow: hidden;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-tag {
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            background: rgba(51, 65, 85, 0.5);
-            border-radius: 20px;
-            color: var(--text-light);
-        }
-
-        .project-line {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--green), var(--green-dark));
-            transition: width 0.5s;
-        }
-
-        .project-card:hover .project-line {
-            width: 100%;
-        }
-
-        /* Learning Section */
-        .learning-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .learning-card {
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            background: rgba(51, 65, 85, 0.3);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-        }
-
-        .learning-card:hover {
-            border-color: rgba(34, 197, 94, 0.3);
-        }
-
-        .learning-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .learning-icon {
-            font-size: 3rem;
-        }
-
-        .learning-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .learning-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .learning-status {
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            border-radius: 20px;
-        }
-
-        .status-progress {
-            background: rgba(34, 197, 94, 0.2);
-            color: var(--green);
-        }
-
-        .status-planned {
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--blue);
-        }
-
-        .learning-description {
-            color: var(--text-gray);
-        }
-
-        /* Contact Section */
-        .contact-container {
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-gray);
-            font-size: 1.125rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: transform 0.3s;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-linkedin {
-            background: linear-gradient(to right, #3b82f6, #1e40af);
-        }
-
-        .btn-github {
-            background: linear-gradient(to right, #475569, #1e293b);
-        }
-
-        .btn-email {
-            background: linear-gradient(to right, var(--green), #059669);
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            text-align: center;
-            color: var(--text-gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 4rem 1rem;
-            }
-        }
-
-        /* Fade in animation on scroll */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!-- Navigation -->
 <nav class="navbar">
     <div class="nav-content">
-        <div class="nav-logo">Eduardo de Paula</div>
+        <div class="nav-logo"><a href="#hero">Eduardo de Paula</a></div>
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#aprendizado">Aprendizado</a></li>
+            <li><a href="#aprendizado">Roadmap</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
         <div class="hamburger">☰</div>
@@ -648,39 +28,38 @@
 <section id="hero" class="hero">
     <div class="hero-background"></div>
     <div class="code-rain">
-        <div class="code-item" style="left: 5%; top: 10%; animation-delay: 0s;">{ code }</div>
-        <div class="code-item" style="left: 15%; top: 30%; animation-delay: 0.2s;">const dev</div>
-        <div class="code-item" style="left: 25%; top: 50%; animation-delay: 0.4s;">async</div>
-        <div class="code-item" style="left: 35%; top: 20%; animation-delay: 0.6s;">function()</div>
-        <div class="code-item" style="left: 45%; top: 70%; animation-delay: 0.8s;">=></div>
-        <div class="code-item" style="left: 55%; top: 40%; animation-delay: 1s;">node.js</div>
-        <div class="code-item" style="left: 65%; top: 60%; animation-delay: 1.2s;">angular</div>
-        <div class="code-item" style="left: 75%; top: 25%; animation-delay: 1.4s;">mongodb</div>
-        <div class="code-item" style="left: 85%; top: 80%; animation-delay: 1.6s;">{ }</div>
-        <div class="code-item" style="left: 95%; top: 45%; animation-delay: 1.8s;">API</div>
+        <div class="code-item" style="left: 5%; top: 10%; animation-delay: 0s;">SELECT * FROM</div>
+        <div class="code-item" style="left: 15%; top: 30%; animation-delay: 0.2s;">data_analysis</div>
+        <div class="code-item" style="left: 25%; top: 50%; animation-delay: 0.4s;">pandas.read_csv()</div>
+        <div class="code-item" style="left: 35%; top: 20%; animation-delay: 0.6s;">GROUP BY</div>
+        <div class="code-item" style="left: 45%; top: 70%; animation-delay: 0.8s;">ETL Pipeline</div>
+        <div class="code-item" style="left: 55%; top: 40%; animation-delay: 1s;">mongodb.aggregate()</div>
+        <div class="code-item" style="left: 65%; top: 60%; animation-delay: 1.2s;">data.describe()</div>
+        <div class="code-item" style="left: 75%; top: 25%; animation-delay: 1.4s;">JOIN tables</div>
+        <div class="code-item" style="left: 85%; top: 80%; animation-delay: 1.6s;">df.plot()</div>
+        <div class="code-item" style="left: 95%; top: 45%; animation-delay: 1.8s;">LGPD</div>
     </div>
 
     <div class="hero-content">
         <div class="avatar">
-            <div class="avatar-inner">💻</div>
+            <div class="avatar-inner">
+                <img src="../assets/profile.jfif" alt="Eduardo de Paula">
+            </div>
         </div>
 
         <h1 class="hero-title">Eduardo de Paula</h1>
-        <p class="hero-subtitle">Full-Stack Developer</p>
+        <p class="hero-subtitle">Desenvolvedor em Transição para Dados</p>
         <p class="hero-description">
-            Especializado em <span class="highlight highlight-green">Node.js</span>,
+            Base técnica em <span class="highlight highlight-green">Node.js</span>,
             <span class="highlight highlight-red">Angular</span> e
             <span class="highlight highlight-blue">MongoDB</span>
-            <br>Construindo soluções modernas e escaláveis
+            <br>Migrando para <span class="highlight highlight-purple">Análise de Dados</span>,
+            <span class="highlight highlight-orange">DBA</span> e
+            <span class="highlight highlight-cyan">Governança de Dados</span>
         </p>
 
         <div class="hero-buttons">
-            <a href="#contato" class="btn-primary">
-                Vamos Conversar →
-            </a>
-            <a href="https://github.com/eduardoo-ely" target="_blank" class="btn-secondary">
-                Ver Projetos
-            </a>
+            <a href="#contato" class="btn-primary">Vamos Conversar →</a>
         </div>
     </div>
 
@@ -694,24 +73,28 @@
     <div class="about-grid">
         <div class="about-text">
             <p>
-                Desenvolvedor Full-Stack focado em <span class="highlight highlight-green">Node.js</span>,
+                Desenvolvedor com base técnica em <span class="highlight highlight-green">Node.js</span>,
                 <span class="highlight highlight-red">Angular</span> e
                 <span class="highlight highlight-blue">MongoDB</span>,
-                com experiência em construção de APIs REST e aplicações web modernas.
+                em transição para a área de dados. Tenho experiência prática com desenvolvimento Full-Stack,
+                mas meu foco atual é migrar para análise, gestão e governança de dados.
             </p>
             <p>
                 Atualmente no 4º semestre de <span class="highlight highlight-blue">Ciência da Computação</span>,
-                trabalhando como Suporte Técnico 1 na IXC Soft, onde aplico conhecimentos de backend e banco de dados no dia a dia.
+                trabalhando como Suporte Técnico 1 na IXC Soft, onde aplico conhecimentos de banco de dados e,
+                principalmente, servidores no dia a dia.
             </p>
             <p>
-                Trabalho principalmente com <span class="highlight highlight-blue">MongoDB</span> em produção
-                e estou expandindo para <span class="highlight highlight-green">Python</span>, além de aprofundar em
-                <span class="highlight" style="color: #a855f7;">Análise de Dados</span>.
+                Trabalho com <span class="highlight highlight-blue">MongoDB</span> em consultas.
+                Meu plano de carreira é evoluir para <span class="highlight highlight-purple">Análise de Dados</span>,
+                depois para <span class="highlight highlight-orange">DBA (Database Administrator)</span> e
+                posteriormente <span class="highlight highlight-cyan">Governança de Dados</span>,
+                unindo experiência técnica com gestão estratégica de informações.
             </p>
         </div>
 
         <div class="stack-card">
-            <h3 class="stack-title">Stack Principal</h3>
+            <h3 class="stack-title">Stack Atual (Base)</h3>
             <div class="stack-item">
                 <span class="stack-icon">⚙️</span>
                 <div>
@@ -729,16 +112,63 @@
             <div class="stack-item">
                 <span class="stack-icon">🗄️</span>
                 <div>
-                    <p class="stack-label">Database Principal</p>
-                    <p class="stack-tech">MongoDB (Produção)</p>
+                    <p class="stack-label">Databases (Produção)</p>
+                    <p class="stack-tech">MongoDB • PostgreSQL</p>
                 </div>
             </div>
             <div class="stack-item">
                 <span class="stack-icon">📊</span>
                 <div>
-                    <p class="stack-label">Outros DBs</p>
-                    <p class="stack-tech">PostgreSQL • Neo4j</p>
+                    <p class="stack-label">Foco Futuro</p>
+                    <p class="stack-tech">Análise • DBA • Governança</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experiência Section -->
+<section id="experiencia" class="section fade-in-up">
+    <h2 class="section-title">Experiência Profissional</h2>
+
+    <div class="experience-grid">
+        <!-- Experiência Atual -->
+        <div class="experience-card">
+            <div class="experience-icon">💼</div>
+            <h3 class="experience-title">Suporte Técnico 1</h3>
+            <p class="experience-company">IXC Soft</p>
+            <p class="experience-period">Atual</p>
+            <p class="experience-description">
+                Atuação focada no atendimento ao cliente, resolução de demandas e suporte técnico especializado.
+                Responsável por auxiliar usuários, solucionar problemas técnicos e automatizar processos internos.
+                Também trabalho diretamente com servidores e realizo consultas em bancos de dados.
+            </p>
+            <div class="experience-skills">
+                <span class="experience-skill-tag">Servidores</span>
+                <span class="experience-skill-tag">Redis</span>
+                <span class="experience-skill-tag">MongoDB</span>
+                <span class="experience-skill-tag">Cloud</span>
+                <span class="experience-skill-tag">Suporte</span>
+            </div>
+        </div>
+
+        <!-- Experiência Anterior -->
+        <div class="experience-card">
+            <div class="experience-icon">🖥️</div>
+            <h3 class="experience-title">Analista de TI</h3>
+            <p class="experience-company">Transportadora Lunardi</p>
+            <p class="experience-period">9 meses</p>
+            <p class="experience-description">
+                Atuação em infraestrutura, hardware, redes e suporte aos usuários.
+                Experiência prática com manutenção de servidores, virtualização e configuração de máquinas.
+                Desenvolvi uma base sólida em resolução de problemas (troubleshooting) e na administração de ambientes locais (on-premise).
+            </p>
+            <div class="experience-skills">
+                <span class="experience-skill-tag">Infraestrutura</span>
+                <span class="experience-skill-tag">Redes</span>
+                <span class="experience-skill-tag">Servidores</span>
+                <span class="experience-skill-tag">Virtualização</span>
+                <span class="experience-skill-tag">Suporte</span>
             </div>
         </div>
     </div>
@@ -750,6 +180,7 @@
         <h2 class="section-title">Habilidades Técnicas</h2>
 
         <div class="skills-grid">
+            <!-- Backend -->
             <div class="skill-category">
                 <div class="skill-header">
                     <div class="skill-icon">⚙️</div>
@@ -757,11 +188,11 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-info">
-                        <span class="skill-name">Node.js</span>
-                        <span class="skill-level">Intermediário</span>
+                        <span class="skill-name">Java</span>
+                        <span class="skill-level">Iniciante</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
+                        <div class="skill-progress" data-progress="20"></div>
                     </div>
                 </div>
                 <div class="skill-item">
@@ -770,11 +201,12 @@
                         <span class="skill-level">Intermediário</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="65"></div>
+                        <div class="skill-progress" data-progress="55"></div>
                     </div>
                 </div>
             </div>
 
+            <!-- Frontend -->
             <div class="skill-category">
                 <div class="skill-header">
                     <div class="skill-icon" style="background: rgba(239, 68, 68, 0.2);">🎨</div>
@@ -786,7 +218,7 @@
                         <span class="skill-level">Intermediário</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
+                        <div class="skill-progress" data-progress="45"></div>
                     </div>
                 </div>
                 <div class="skill-item">
@@ -795,24 +227,16 @@
                         <span class="skill-level">Intermediário</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
+                        <div class="skill-progress" data-progress="50"></div>
                     </div>
                 </div>
             </div>
 
+            <!-- Databases -->
             <div class="skill-category">
                 <div class="skill-header">
-                    <div class="skill-icon" style="background: rgba(59, 130, 246, 0.2);">🗄️</div>
+                    <div class="skill-icon" style="background: rgba(34, 197, 94, 0.2);">🗄️</div>
                     <h3 class="skill-category-name">Databases</h3>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">MongoDB</span>
-                        <span class="skill-level">Intermediário</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-info">
@@ -820,16 +244,16 @@
                         <span class="skill-level">Intermediário</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
+                        <div class="skill-progress" data-progress="55"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-info">
-                        <span class="skill-name">Neo4j</span>
-                        <span class="skill-level">Aprendendo</span>
+                        <span class="skill-name">MongoDB</span>
+                        <span class="skill-level">Intermediário</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-progress="30"></div>
+                        <div class="skill-progress" data-progress="50"></div>
                     </div>
                 </div>
             </div>
@@ -838,51 +262,92 @@
 </div>
 
 <!-- Projects Section -->
+<div class="section fade-in-up">
 <section id="projetos" class="section fade-in-up">
-    <h2 class="section-title">Projetos Destacados</h2>
+    <h2 class="section-title">Projetos em Destaque</h2>
+    <p class="section-subtitle">Aqui estão alguns projetos que desenvolvi para aprimorar minhas habilidades em desenvolvimento, automação e área de dados.</p>
 
     <div class="projects-grid">
         <div class="project-card">
-            <h3 class="project-title">📌 Sistema de Lembretes Chrome</h3>
-            <p class="project-description">Extensão com notificações inteligentes.</p>
+            <div class="project-title">📦 Reutiliza – Plataforma Ambiental</div>
+            <p class="project-description">
+                Aplicação Full-Stack focada em logística sustentável: mapeamento de pontos de coleta, rotas e visualização geográfica.
+                Utiliza Angular, Leaflet e integração com APIs externas.
+            </p>
             <div class="project-tech">
-                <span class="tech-tag">Javascript</span>
-                <span class="tech-tag">Chrome API</span>
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
             </div>
+            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/reutiliza" target="_blank">Ver no GitHub</a>
             <div class="project-line"></div>
         </div>
 
         <div class="project-card">
-            <h3 class="project-title">📌 Reutiliza</h3>
-            <p class="project-description">Plataforma para pontos de coleta e logística sustentável.
-                Aplicação Full-Stack web com validação e CRUDs, vinculado a um cluster em nuvem. </p>
+            <div class="project-title">⏰ Opa! Reminders – Extensão de Notificações</div>
+            <p class="project-description">
+                Extensão Chrome com sistema avançado de agendamentos e notificações inteligentes.
+                Inclui interface de criação de eventos, alarmes independentes e integração com o Chrome Alarms API.
+            </p>
             <div class="project-tech">
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">Angular</span>
-                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Chrome API</span>
+                <span class="tech-tag">Manifest V3</span>
             </div>
+            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/opa-reminders" target="_blank">Ver no GitHub</a>
+            <div class="project-line"></div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">🗄️ Banco de Dados Distribuídos</div>
+            <p class="project-description">
+                Replicação e sincronização entre dois bancos PostgreSQL via <strong>dblink</strong>.
+                Inclui scripts otimizados, testes e documentação completa de integração.
+            </p>
+            <div class="project-tech">
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">DBLink</span>
+                <span class="tech-tag">SQL</span>
+            </div>
+            <a class="btn-secondary project-btn" href="#" target="_blank">Ver no Github</a>
+            <div class="project-line"></div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">📊 Estudos de Estruturas de Dados</div>
+            <p class="project-description">
+                Implementações de árvores, grafos, pilhas, filas e hash tables em Python,
+                acompanhadas de resumos explicativos e análises de complexidade.
+            </p>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Algoritmos</span>
+                <span class="tech-tag">Estruturas de Dados</span>
+            </div>
+            <a class="btn-secondary project-btn" href="#" target="_blank">Ver no Github</a>
             <div class="project-line"></div>
         </div>
     </div>
 </section>
+</div>
 
 <!-- Learning Path Section -->
 <div class="section-dark">
     <section id="aprendizado" class="section fade-in-up">
-        <h2 class="section-title">Roadmap de Aprendizado</h2>
-        <p class="section-subtitle">Tecnologias que estou estudando e planejando dominar</p>
+        <h2 class="section-title">Roadmap de Carreira em Dados</h2>
+        <p class="section-subtitle">Minha jornada: Desenvolvimento → Análise de Dados → DBA → Governança de Dados</p>
 
         <div class="learning-grid">
             <div class="learning-card">
                 <div class="learning-content">
-                    <span class="learning-icon">☕</span>
+                    <span class="learning-icon">📊</span>
                     <div style="flex: 1;">
                         <div class="learning-header">
-                            <h3 class="learning-title">Java</h3>
-                            <span class="learning-status status-planned">Planejado</span>
+                            <h3 class="learning-title">Análise de Dados</h3>
+                            <span class="learning-status status-progress">Em Progresso</span>
                         </div>
-                        <p class="learning-description">Próximo foco para desenvolvimento backend enterprise</p>
+                        <p class="learning-description">Python, Pandas, NumPy, SQL avançado, visualização de dados e estatística descritiva</p>
                     </div>
                 </div>
             </div>
@@ -892,36 +357,88 @@
                     <span class="learning-icon">🐍</span>
                     <div style="flex: 1;">
                         <div class="learning-header">
-                            <h3 class="learning-title">Python</h3>
-                            <span class="learning-status status-planned">Planejado</span>
-                        </div>
-                        <p class="learning-description">Para análise de dados e automação</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">🔗</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Cypher (Neo4j)</h3>
+                            <h3 class="learning-title">Python para Dados</h3>
                             <span class="learning-status status-progress">Em Progresso</span>
                         </div>
-                        <p class="learning-description">Query language para bancos orientados a grafos</p>
+                        <p class="learning-description">Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebooks e manipulação de datasets</p>
                     </div>
                 </div>
             </div>
 
             <div class="learning-card">
                 <div class="learning-content">
-                    <span class="learning-icon">📊</span>
+                    <span class="learning-icon">📈</span>
                     <div style="flex: 1;">
                         <div class="learning-header">
-                            <h3 class="learning-title">Engenharia de Dados</h3>
+                            <h3 class="learning-title">Visualização de Dados</h3>
+                            <span class="learning-status status-progress">Em Progresso</span>
+                        </div>
+                        <p class="learning-description">Power BI, Tableau, dashboards interativos e storytelling com dados</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-content">
+                    <span class="learning-icon">🗄️</span>
+                    <div style="flex: 1;">
+                        <div class="learning-header">
+                            <h3 class="learning-title">DBA (Database Administrator)</h3>
+                            <span class="learning-status status-next">Próximo Passo</span>
+                        </div>
+                        <p class="learning-description">Administração avançada de bancos, performance tuning, backup, recovery e alta disponibilidade</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-content">
+                    <span class="learning-icon">🔄</span>
+                    <div style="flex: 1;">
+                        <div class="learning-header">
+                            <h3 class="learning-title">ETL & Data Engineering</h3>
+                            <span class="learning-status status-next">Próximo Passo</span>
+                        </div>
+                        <p class="learning-description">Pipelines de dados, Apache Airflow, integração e transformação de dados em escala</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-content">
+                    <span class="learning-icon">☁️</span>
+                    <div style="flex: 1;">
+                        <div class="learning-header">
+                            <h3 class="learning-title">Cloud Data Platforms</h3>
                             <span class="learning-status status-planned">Planejado</span>
                         </div>
-                        <p class="learning-description">Data pipelines, ETL e análise avançada</p>
+                        <p class="learning-description">AWS/Azure para dados, Data Lakes, Data Warehouses e soluções em nuvem</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-content">
+                    <span class="learning-icon">⚖️</span>
+                    <div style="flex: 1;">
+                        <div class="learning-header">
+                            <h3 class="learning-title">Governança de Dados</h3>
+                            <span class="learning-status status-future">Meta Futura</span>
+                        </div>
+                        <p class="learning-description">Qualidade de dados, segurança, compliance (LGPD), políticas e estratégia organizacional</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-content">
+                    <span class="learning-icon">🔐</span>
+                    <div style="flex: 1;">
+                        <div class="learning-header">
+                            <h3 class="learning-title">Data Quality & LGPD</h3>
+                            <span class="learning-status status-future">Meta Futura</span>
+                        </div>
+                        <p class="learning-description">Qualidade, integridade, privacidade, auditoria e conformidade com legislação</p>
                     </div>
                 </div>
             </div>
@@ -933,7 +450,7 @@
 <section id="contato" class="section contact-container fade-in-up">
     <h2 class="section-title">Vamos Construir Algo Juntos?</h2>
     <p class="section-subtitle">
-        Interessado em colaborar em projetos ou discutir oportunidades? Entre em contato!
+        Interessado em colaborar em projetos de dados ou discutir oportunidades? Entre em contato!
     </p>
 
     <div class="contact-buttons">
@@ -954,82 +471,9 @@
 
 <!-- Footer -->
 <footer>
-    <p>© 2024 Eduardo de Paula. Full-Stack Developer • Node.js & Angular & MongoDB</p>
+    <p>© 2024 Eduardo de Paula • Desenvolvedor em Transição para a Área de Dados</p>
 </footer>
 
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-
-                // Animate skill bars when section becomes visible
-                if (entry.target.id === 'skills') {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const progress = bar.getAttribute('data-progress');
-                        setTimeout(() => {
-                            bar.style.width = progress + '%';
-                        }, 100);
-                    });
-                }
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in-up').forEach(el => {
-        observer.observe(el);
-    });
-
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-        }
-    });
-
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navLinks.style.display = 'none';
-            }
-        });
-    });
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            navLinks.style.display = 'flex';
-        } else {
-            navLinks.style.display = 'none';
-        }
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
