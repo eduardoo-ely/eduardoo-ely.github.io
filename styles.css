@@ -187,8 +187,17 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); opacity: 0.3; }
-    50% { transform: translateY(-20px); opacity: 0.6; }
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.6;
+    }
 }
 
 .hero-content {
@@ -230,8 +239,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .hero-title {
@@ -266,6 +282,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -276,12 +293,29 @@ body {
     font-weight: 600;
 }
 
-.highlight-green { color: var(--green); }
-.highlight-red { color: var(--red); }
-.highlight-blue { color: var(--blue); }
-.highlight-purple { color: var(--purple); }
-.highlight-orange { color: var(--orange); }
-.highlight-cyan { color: var(--cyan); }
+.highlight-green {
+    color: var(--green);
+}
+
+.highlight-red {
+    color: var(--red);
+}
+
+.highlight-blue {
+    color: var(--blue);
+}
+
+.highlight-purple {
+    color: var(--purple);
+}
+
+.highlight-orange {
+    color: var(--orange);
+}
+
+.highlight-cyan {
+    color: var(--cyan);
+}
 
 .hero-buttons {
     display: flex;
@@ -336,8 +370,15 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
 /* ========================================
@@ -579,7 +620,8 @@ body {
    ======================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* sempre 2 cards por linha */
+    grid-template-columns: repeat(2, 1fr);
+    /* sempre 2 cards por linha */
     gap: 2rem;
 }
 
@@ -862,6 +904,7 @@ footer {
     .split-text:hover .char {
         transform: none;
     }
+
     .reveal-item {
         opacity: 1;
         transform: none;

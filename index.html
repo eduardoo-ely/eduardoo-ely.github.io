@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,522 +17,544 @@
     }
     </script>
 </head>
+
 <body>
-<!-- Barra de progresso de scroll -->
-<div class="scroll-progress" id="scroll-progress"></div>
+    <!-- Barra de progresso de scroll -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-<!-- Fundo 3D (Three.js): rede de dados -->
-<canvas id="bg-canvas"></canvas>
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="nav-content">
-        <div class="nav-logo"><a href="#hero">Eduardo de Paula</a></div>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#experiencia">Experiência</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#aprendizado">Roadmap</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
-    </div>
-</nav>
+    <!-- Fundo 3D (Three.js): rede de dados -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-logo"><a href="#hero">Eduardo de Paula</a></div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#aprendizado">Roadmap</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
 
-<!-- Hero Section -->
-<section id="hero" class="hero">
-    <div class="hero-background"></div>
-    <div class="code-rain">
-        <div class="code-item" style="left: 5%; top: 10%; animation-delay: 0s;">SELECT * FROM</div>
-        <div class="code-item" style="left: 15%; top: 30%; animation-delay: 0.2s;">data_analysis</div>
-        <div class="code-item" style="left: 25%; top: 50%; animation-delay: 0.4s;">pandas.read_csv()</div>
-        <div class="code-item" style="left: 35%; top: 20%; animation-delay: 0.6s;">GROUP BY</div>
-        <div class="code-item" style="left: 45%; top: 70%; animation-delay: 0.8s;">Looker Studio</div>
-        <div class="code-item" style="left: 55%; top: 40%; animation-delay: 1s;">MariaDB.query()</div>
-        <div class="code-item" style="left: 65%; top: 60%; animation-delay: 1.2s;">data.describe()</div>
-        <div class="code-item" style="left: 75%; top: 25%; animation-delay: 1.4s;">JOIN tables</div>
-        <div class="code-item" style="left: 85%; top: 80%; animation-delay: 1.6s;">df.plot()</div>
-        <div class="code-item" style="left: 95%; top: 45%; animation-delay: 1.8s;">LGPD</div>
-    </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background"></div>
+        <div class="code-rain">
+            <div class="code-item" style="left: 5%; top: 10%; animation-delay: 0s;">SELECT * FROM</div>
+            <div class="code-item" style="left: 15%; top: 30%; animation-delay: 0.2s;">data_analysis</div>
+            <div class="code-item" style="left: 25%; top: 50%; animation-delay: 0.4s;">pandas.read_csv()</div>
+            <div class="code-item" style="left: 35%; top: 20%; animation-delay: 0.6s;">GROUP BY</div>
+            <div class="code-item" style="left: 45%; top: 70%; animation-delay: 0.8s;">Looker Studio</div>
+            <div class="code-item" style="left: 55%; top: 40%; animation-delay: 1s;">MariaDB.query()</div>
+            <div class="code-item" style="left: 65%; top: 60%; animation-delay: 1.2s;">data.describe()</div>
+            <div class="code-item" style="left: 75%; top: 25%; animation-delay: 1.4s;">JOIN tables</div>
+            <div class="code-item" style="left: 85%; top: 80%; animation-delay: 1.6s;">df.plot()</div>
+            <div class="code-item" style="left: 95%; top: 45%; animation-delay: 1.8s;">LGPD</div>
+        </div>
 
-    <div class="hero-content">
-        <div class="avatar">
-            <div class="avatar-inner">
-                <img src="assets/profile.jfif" alt="Eduardo de Paula">
+        <div class="hero-content">
+            <div class="avatar">
+                <div class="avatar-inner">
+                    <img src="assets/profile.jfif" alt="Eduardo de Paula">
+                </div>
+            </div>
+
+            <h1 class="hero-title">Eduardo de Paula</h1>
+            <p class="hero-subtitle">Data Analyst Jr</p>
+            <p class="hero-description">
+                Atuando com <span class="highlight highlight-green">MariaDB</span> e
+                <span class="highlight highlight-cyan">Looker</span> na
+                <span class="highlight highlight-blue">IXC Soft</span>
+                <br>Evoluindo para <span class="highlight highlight-purple">DBA</span>,
+                <span class="highlight highlight-orange">ETL</span> e
+                <span class="highlight highlight-cyan">Engenharia de Dados</span>
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contato" class="btn-primary">Vamos Conversar →</a>
             </div>
         </div>
 
-        <h1 class="hero-title">Eduardo de Paula</h1>
-        <p class="hero-subtitle">Data Analyst Jr</p>
-        <p class="hero-description">
-            Atuando com <span class="highlight highlight-green">MariaDB</span> e
-            <span class="highlight highlight-cyan">Looker</span> na
-            <span class="highlight highlight-blue">IXC Soft</span>
-            <br>Evoluindo para <span class="highlight highlight-purple">DBA</span>,
-            <span class="highlight highlight-orange">ETL</span> e
-            <span class="highlight highlight-cyan">Engenharia de Dados</span>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="section fade-in-up">
+        <h2 class="section-title">Sobre Mim</h2>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Atuando como <span class="highlight highlight-green">Data Analyst Jr na IXC Soft</span>,
+                    combino minha base técnica em desenvolvimento Full-Stack com análise de dados no dia a dia.
+                    Trabalho com <span class="highlight highlight-cyan">MariaDB</span> e
+                    <span class="highlight highlight-blue">Looker</span> para extração, consulta e
+                    visualização de informações estratégicas.
+                </p>
+                <p>
+                    Atualmente no 5º semestre de <span class="highlight highlight-blue">Ciência da Computação</span>,
+                    aplico conhecimentos de banco de dados e servidores tanto no suporte técnico quanto na análise de
+                    dados,
+                    unindo as duas frentes para entregar mais valor no meu trabalho.
+                </p>
+                <p>
+                    Tenho também uma base em <span class="highlight highlight-orange">Java</span> e desenvolvimento que
+                    me dá fundamento técnico — mas hoje meu foco é claro:
+                    <span class="highlight highlight-green">dados</span>. Do dia a dia com SQL e dashboards até a
+                    construção de pipelines, estou direcionando tudo para a área.
+                </p>
+                <p>
+                    Meu plano de carreira é evoluir de <span class="highlight highlight-green">Data Analyst</span>
+                    para <span class="highlight highlight-purple">DBA (Database Administrator)</span> e, em seguida,
+                    <span class="highlight highlight-cyan">Engenharia de Dados</span> — passando por ETL e
+                    Governança, unindo experiência técnica com gestão estratégica de informações.
+                </p>
+            </div>
+
+            <div class="stack-card">
+                <h3 class="stack-title">Stack Atual</h3>
+                <div class="stack-item">
+                    <span class="stack-icon">📊</span>
+                    <div>
+                        <p class="stack-label">Análise de Dados</p>
+                        <p class="stack-tech">MariaDB • Looker</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <span class="stack-icon">🗄️</span>
+                    <div>
+                        <p class="stack-label">Databases</p>
+                        <p class="stack-tech">MariaDB • PostgreSQL • MongoDB</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <span class="stack-icon">⚙️</span>
+                    <div>
+                        <p class="stack-label">Backend (Base)</p>
+                        <p class="stack-tech">Node.js • Express.js</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <span class="stack-icon">🎯</span>
+                    <div>
+                        <p class="stack-label">Foco Futuro</p>
+                        <p class="stack-tech">Python • ETL • DBA • Governança</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência Section -->
+    <section id="experiencia" class="section fade-in-up">
+        <h2 class="section-title">Experiência Profissional</h2>
+
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-icon">📊</div>
+                <h3 class="experience-title">Data Analyst Jr</h3>
+                <p class="experience-company">IXC Soft</p>
+                <p class="experience-period">Atual</p>
+                <p class="experience-description">
+                    Atuação em análise de dados com foco em extração, consulta e visualização de informações
+                    estratégicas.
+                    Trabalho diretamente com <strong>MariaDB</strong> para consultas e tratamento de dados,
+                    e <strong>Looker</strong> para construção de dashboards e relatórios analíticos.
+                    Contribuo na geração de insights que apoiam decisões técnicas e de negócio.
+                </p>
+                <div class="experience-skills">
+                    <span class="experience-skill-tag">MariaDB</span>
+                    <span class="experience-skill-tag">Looker</span>
+                    <span class="experience-skill-tag">SQL</span>
+                    <span class="experience-skill-tag">Dashboards</span>
+                    <span class="experience-skill-tag">Análise de Dados</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-icon">💼</div>
+                <h3 class="experience-title">Suporte Técnico 1</h3>
+                <p class="experience-company">IXC Soft</p>
+                <p class="experience-period">11 Meses</p>
+                <p class="experience-description">
+                    Atuação focada no atendimento ao cliente, resolução de demandas e suporte técnico especializado.
+                    Responsável por auxiliar usuários, solucionar problemas técnicos e automatizar processos internos.
+                    Também trabalhei diretamente com servidores e realizei consultas em bancos de dados.
+                </p>
+                <div class="experience-skills">
+                    <span class="experience-skill-tag">Servidores</span>
+                    <span class="experience-skill-tag">Redis</span>
+                    <span class="experience-skill-tag">MongoDB</span>
+                    <span class="experience-skill-tag">Cloud</span>
+                    <span class="experience-skill-tag">Suporte</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-icon">🖥️</div>
+                <h3 class="experience-title">Analista de TI</h3>
+                <p class="experience-company">Transportadora Lunardi</p>
+                <p class="experience-period">9 meses</p>
+                <p class="experience-description">
+                    Atuação em infraestrutura, hardware, redes e suporte aos usuários.
+                    Experiência prática com manutenção de servidores, virtualização e configuração de máquinas.
+                    Desenvolvi uma base sólida em resolução de problemas (troubleshooting) e na administração de
+                    ambientes locais (on-premise).
+                </p>
+                <div class="experience-skills">
+                    <span class="experience-skill-tag">Infraestrutura</span>
+                    <span class="experience-skill-tag">Redes</span>
+                    <span class="experience-skill-tag">Servidores</span>
+                    <span class="experience-skill-tag">Virtualização</span>
+                    <span class="experience-skill-tag">Suporte</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <div class="section-dark">
+        <section id="skills" class="section fade-in-up">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+
+            <div class="skills-grid">
+                <!-- Dados & BI -->
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">📊</div>
+                        <h3 class="skill-category-name">Dados & BI</h3>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PowerBI</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Looker</span>
+                            <span class="skill-level">Em evolução</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="45"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon" style="background: rgba(34, 197, 94, 0.2);">🗄️</div>
+                        <h3 class="skill-category-name">Databases</h3>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MariaDB</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="55"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="50"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon" style="background: rgba(239, 68, 68, 0.2);">⚙️</div>
+                        <h3 class="skill-category-name">Backend</h3>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Express.js</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="55"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-level">Base / Acadêmico</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="40"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section fade-in-up">
+        <section id="projetos" class="section fade-in-up">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <p class="section-subtitle">Aqui estão alguns projetos que desenvolvi para aprimorar minhas habilidades em
+                desenvolvimento, automação e área de dados.</p>
+
+            <div class="projects-grid">
+                <div class="project-card project-featured">
+                    <span class="project-badge">Em desenvolvimento</span>
+                    <div class="project-title">💎 Sertissage – Gestão de Joias</div>
+                    <p class="project-description">
+                        Plataforma de <strong>gestão de joias</strong> que estou construindo atualmente:
+                        controle de peças, estoque e informações do acervo em uma experiência fluida e visual.
+                        Também serve como laboratório para aprofundar minhas práticas de modelagem e
+                        manipulação de dados.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Gestão</span>
+                        <span class="tech-tag">Joias</span>
+                        <span class="tech-tag">Em construção</span>
+                    </div>
+                    <div class="project-line"></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">📦 Reutiliza – Plataforma Ambiental</div>
+                    <p class="project-description">
+                        Aplicação Full-Stack focada em logística sustentável: mapeamento de pontos de coleta, rotas e
+                        visualização geográfica.
+                        Utiliza Angular, Leaflet e integração com APIs externas.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/reutiliza"
+                        target="_blank">Ver no GitHub</a>
+                    <div class="project-line"></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">⏰ Opa! Reminders – Extensão de Notificações</div>
+                    <p class="project-description">
+                        Extensão Chrome com sistema avançado de agendamentos e notificações inteligentes.
+                        Inclui interface de criação de eventos, alarmes independentes e integração com o Chrome Alarms
+                        API.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Chrome API</span>
+                        <span class="tech-tag">Manifest V3</span>
+                    </div>
+                    <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/opa-reminders"
+                        target="_blank">Ver no GitHub</a>
+                    <div class="project-line"></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">🗄️ Banco de Dados Distribuídos</div>
+                    <p class="project-description">
+                        Plataforma demonstrativa de persistência poliglota, sincronizando transações
+                        entre 4 paradigmas de banco de dados simultaneamente.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <a class="btn-secondary project-btn"
+                        href="https://github.com/eduardoo-ely/distributed-db-integration" target="_blank">Ver no
+                        Github</a>
+                    <div class="project-line"></div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">📊 Sistema de Integração de Dados (XML & SQL)</div>
+                    <p class="project-description">
+                        Este projeto demonstra a integração de dados heterogêneos, unificando informações
+                        relacionais (PostgreSQL) com dados semiestruturados (XML) através de uma aplicação
+                        Java Spring Boot.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">XML</span>
+                        <span class="tech-tag">PostgresSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <a class="btn-secondary project-btn"
+                        href="https://github.com/eduardoo-ely/xml-relational-integration" target="_blank">Ver no
+                        Github</a>
+                    <div class="project-line"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Learning Path Section -->
+    <div class="section-dark">
+        <section id="aprendizado" class="section fade-in-up">
+            <h2 class="section-title">Roadmap de Carreira em Dados</h2>
+            <p class="section-subtitle">Minha jornada: Data Analyst → DBA → ETL → Engenharia de Dados</p>
+
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">📊</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Análise de Dados</h3>
+                                <span class="learning-status status-progress">Em Progresso</span>
+                            </div>
+                            <p class="learning-description">MariaDB, Looker, SQL avançado e geração de insights
+                                estratégicos no dia a dia na IXC Soft</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">🐍</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Python para Dados</h3>
+                                <span class="learning-status status-progress">Em Progresso</span>
+                            </div>
+                            <p class="learning-description">Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebooks e
+                                manipulação de datasets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">📈</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Visualização de Dados</h3>
+                                <span class="learning-status status-progress">Em Progresso</span>
+                            </div>
+                            <p class="learning-description">Looker (em uso), Power BI, Tableau, dashboards interativos e
+                                storytelling com dados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">🗄️</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">DBA (Database Administrator)</h3>
+                                <span class="learning-status status-next">Próximo Passo</span>
+                            </div>
+                            <p class="learning-description">Administração avançada de bancos, performance tuning,
+                                backup, recovery e alta disponibilidade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">🔄</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">ETL & Data Engineering</h3>
+                                <span class="learning-status status-next">Próximo Passo</span>
+                            </div>
+                            <p class="learning-description">Pipelines de dados, Apache Airflow, integração e
+                                transformação de dados em escala</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">☁️</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Cloud Data Platforms</h3>
+                                <span class="learning-status status-planned">Planejado</span>
+                            </div>
+                            <p class="learning-description">AWS/Azure para dados, Data Lakes, Data Warehouses e soluções
+                                em nuvem</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">⚖️</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Governança de Dados</h3>
+                                <span class="learning-status status-future">Meta Futura</span>
+                            </div>
+                            <p class="learning-description">Qualidade de dados, segurança, compliance (LGPD), políticas
+                                e estratégia organizacional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+                    <div class="learning-content">
+                        <span class="learning-icon">🔐</span>
+                        <div style="flex: 1;">
+                            <div class="learning-header">
+                                <h3 class="learning-title">Data Quality & LGPD</h3>
+                                <span class="learning-status status-future">Meta Futura</span>
+                            </div>
+                            <p class="learning-description">Qualidade, integridade, privacidade, auditoria e
+                                conformidade com legislação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contato" class="section contact-container fade-in-up">
+        <h2 class="section-title">Vamos Construir Algo Juntos?</h2>
+        <p class="section-subtitle">
+            Interessado em colaborar em projetos de dados ou discutir oportunidades? Entre em contato!
         </p>
 
-        <div class="hero-buttons">
-            <a href="#contato" class="btn-primary">Vamos Conversar →</a>
-        </div>
-    </div>
-
-    <div class="scroll-indicator">↓</div>
-</section>
-
-<!-- About Section -->
-<section id="sobre" class="section fade-in-up">
-    <h2 class="section-title">Sobre Mim</h2>
-
-    <div class="about-grid">
-        <div class="about-text">
-            <p>
-                Atuando como <span class="highlight highlight-green">Data Analyst Jr na IXC Soft</span>,
-                combino minha base técnica em desenvolvimento Full-Stack com análise de dados no dia a dia.
-                Trabalho com <span class="highlight highlight-cyan">MariaDB</span> e
-                <span class="highlight highlight-blue">Looker</span> para extração, consulta e
-                visualização de informações estratégicas.
-            </p>
-            <p>
-                Atualmente no 5º semestre de <span class="highlight highlight-blue">Ciência da Computação</span>,
-                aplico conhecimentos de banco de dados e servidores tanto no suporte técnico quanto na análise de dados,
-                unindo as duas frentes para entregar mais valor no meu trabalho.
-            </p>
-            <p>
-                Tenho também uma base em <span class="highlight highlight-orange">Java</span> e desenvolvimento que
-                me dá fundamento técnico — mas hoje meu foco é claro:
-                <span class="highlight highlight-green">dados</span>. Do dia a dia com SQL e dashboards até a
-                construção de pipelines, estou direcionando tudo para a área.
-            </p>
-            <p>
-                Meu plano de carreira é evoluir de <span class="highlight highlight-green">Data Analyst</span>
-                para <span class="highlight highlight-purple">DBA (Database Administrator)</span> e, em seguida,
-                <span class="highlight highlight-cyan">Engenharia de Dados</span> — passando por ETL e
-                Governança, unindo experiência técnica com gestão estratégica de informações.
-            </p>
-        </div>
-
-        <div class="stack-card">
-            <h3 class="stack-title">Stack Atual</h3>
-            <div class="stack-item">
-                <span class="stack-icon">📊</span>
-                <div>
-                    <p class="stack-label">Análise de Dados</p>
-                    <p class="stack-tech">MariaDB • Looker</p>
-                </div>
-            </div>
-            <div class="stack-item">
-                <span class="stack-icon">🗄️</span>
-                <div>
-                    <p class="stack-label">Databases</p>
-                    <p class="stack-tech">MariaDB • PostgreSQL • MongoDB</p>
-                </div>
-            </div>
-            <div class="stack-item">
-                <span class="stack-icon">⚙️</span>
-                <div>
-                    <p class="stack-label">Backend (Base)</p>
-                    <p class="stack-tech">Node.js • Express.js</p>
-                </div>
-            </div>
-            <div class="stack-item">
-                <span class="stack-icon">🎯</span>
-                <div>
-                    <p class="stack-label">Foco Futuro</p>
-                    <p class="stack-tech">Python • ETL • DBA • Governança</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Experiência Section -->
-<section id="experiencia" class="section fade-in-up">
-    <h2 class="section-title">Experiência Profissional</h2>
-
-    <div class="experience-grid">
-        <div class="experience-card">
-            <div class="experience-icon">📊</div>
-            <h3 class="experience-title">Data Analyst Jr</h3>
-            <p class="experience-company">IXC Soft</p>
-            <p class="experience-period">Atual</p>
-            <p class="experience-description">
-                Atuação em análise de dados com foco em extração, consulta e visualização de informações estratégicas.
-                Trabalho diretamente com <strong>MariaDB</strong> para consultas e tratamento de dados,
-                e <strong>Looker</strong> para construção de dashboards e relatórios analíticos.
-                Contribuo na geração de insights que apoiam decisões técnicas e de negócio.
-            </p>
-            <div class="experience-skills">
-                <span class="experience-skill-tag">MariaDB</span>
-                <span class="experience-skill-tag">Looker</span>
-                <span class="experience-skill-tag">SQL</span>
-                <span class="experience-skill-tag">Dashboards</span>
-                <span class="experience-skill-tag">Análise de Dados</span>
-            </div>
-        </div>
-
-        <div class="experience-card">
-            <div class="experience-icon">💼</div>
-            <h3 class="experience-title">Suporte Técnico 1</h3>
-            <p class="experience-company">IXC Soft</p>
-             <p class="experience-period">11 Meses</p>
-            <p class="experience-description">
-                Atuação focada no atendimento ao cliente, resolução de demandas e suporte técnico especializado.
-                Responsável por auxiliar usuários, solucionar problemas técnicos e automatizar processos internos.
-                Também trabalhei diretamente com servidores e realizei consultas em bancos de dados.
-            </p>
-            <div class="experience-skills">
-                <span class="experience-skill-tag">Servidores</span>
-                <span class="experience-skill-tag">Redis</span>
-                <span class="experience-skill-tag">MongoDB</span>
-                <span class="experience-skill-tag">Cloud</span>
-                <span class="experience-skill-tag">Suporte</span>
-            </div>
-        </div>
-
-        <div class="experience-card">
-            <div class="experience-icon">🖥️</div>
-            <h3 class="experience-title">Analista de TI</h3>
-            <p class="experience-company">Transportadora Lunardi</p>
-            <p class="experience-period">9 meses</p>
-            <p class="experience-description">
-                Atuação em infraestrutura, hardware, redes e suporte aos usuários.
-                Experiência prática com manutenção de servidores, virtualização e configuração de máquinas.
-                Desenvolvi uma base sólida em resolução de problemas (troubleshooting) e na administração de ambientes locais (on-premise).
-            </p>
-            <div class="experience-skills">
-                <span class="experience-skill-tag">Infraestrutura</span>
-                <span class="experience-skill-tag">Redes</span>
-                <span class="experience-skill-tag">Servidores</span>
-                <span class="experience-skill-tag">Virtualização</span>
-                <span class="experience-skill-tag">Suporte</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<div class="section-dark">
-    <section id="skills" class="section fade-in-up">
-        <h2 class="section-title">Habilidades Técnicas</h2>
-
-        <div class="skills-grid">
-            <!-- Dados & BI -->
-            <div class="skill-category">
-                <div class="skill-header">
-                    <div class="skill-icon">📊</div>
-                    <h3 class="skill-category-name">Dados & BI</h3>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">PowerBI</span>
-                        <span class="skill-level">Intermediário</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="60"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Looker</span>
-                        <span class="skill-level">Em evolução</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="45"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Databases -->
-            <div class="skill-category">
-                <div class="skill-header">
-                    <div class="skill-icon" style="background: rgba(34, 197, 94, 0.2);">🗄️</div>
-                    <h3 class="skill-category-name">Databases</h3>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">MariaDB</span>
-                        <span class="skill-level">Intermediário</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="55"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">MongoDB</span>
-                        <span class="skill-level">Intermediário</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="50"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Backend -->
-            <div class="skill-category">
-                <div class="skill-header">
-                    <div class="skill-icon" style="background: rgba(239, 68, 68, 0.2);">⚙️</div>
-                    <h3 class="skill-category-name">Backend</h3>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Express.js</span>
-                        <span class="skill-level">Intermediário</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="55"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Java</span>
-                        <span class="skill-level">Base / Acadêmico</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="40"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="contact-buttons">
+            <a href="https://linkedin.com/in/eduardoo-ely" target="_blank" class="contact-btn btn-linkedin">
+                <span style="font-size: 1.5rem;">💼</span>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/eduardoo-ely" target="_blank" class="contact-btn btn-github">
+                <span style="font-size: 1.5rem;">🔧</span>
+                <span>GitHub</span>
+            </a>
+            <a href="mailto:eduardooelly@gmail.com" class="contact-btn btn-email">
+                <span style="font-size: 1.5rem;">📧</span>
+                <span>Email</span>
+            </a>
         </div>
     </section>
-</div>
 
-<!-- Projects Section -->
-<div class="section fade-in-up">
-<section id="projetos" class="section fade-in-up">
-    <h2 class="section-title">Projetos em Destaque</h2>
-    <p class="section-subtitle">Aqui estão alguns projetos que desenvolvi para aprimorar minhas habilidades em desenvolvimento, automação e área de dados.</p>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Eduardo de Paula • Data Analyst Jr</p>
+    </footer>
 
-    <div class="projects-grid">
-        <div class="project-card project-featured">
-            <span class="project-badge">Em desenvolvimento</span>
-            <div class="project-title">💎 Sertissage – Gestão de Joias</div>
-            <p class="project-description">
-                Plataforma de <strong>gestão de joias</strong> que estou construindo atualmente:
-                controle de peças, estoque e informações do acervo em uma experiência fluida e visual.
-                Também serve como laboratório para aprofundar minhas práticas de modelagem e
-                manipulação de dados.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">Gestão</span>
-                <span class="tech-tag">Joias</span>
-                <span class="tech-tag">Em construção</span>
-            </div>
-            <div class="project-line"></div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-title">📦 Reutiliza – Plataforma Ambiental</div>
-            <p class="project-description">
-                Aplicação Full-Stack focada em logística sustentável: mapeamento de pontos de coleta, rotas e visualização geográfica.
-                Utiliza Angular, Leaflet e integração com APIs externas.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">Angular</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
-            </div>
-            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/reutiliza" target="_blank">Ver no GitHub</a>
-            <div class="project-line"></div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-title">⏰ Opa! Reminders – Extensão de Notificações</div>
-            <p class="project-description">
-                Extensão Chrome com sistema avançado de agendamentos e notificações inteligentes.
-                Inclui interface de criação de eventos, alarmes independentes e integração com o Chrome Alarms API.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Chrome API</span>
-                <span class="tech-tag">Manifest V3</span>
-            </div>
-            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/opa-reminders" target="_blank">Ver no GitHub</a>
-            <div class="project-line"></div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-title">🗄️ Banco de Dados Distribuídos</div>
-            <p class="project-description">
-                Plataforma demonstrativa de persistência poliglota, sincronizando transações 
-                entre 4 paradigmas de banco de dados simultaneamente.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">Docker</span>
-            </div>
-            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/distributed-db-integration" target="_blank">Ver no Github</a>
-            <div class="project-line"></div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-title">📊 Sistema de Integração de Dados (XML & SQL)</div>
-            <p class="project-description">
-                Este projeto demonstra a integração de dados heterogêneos, unificando informações 
-                relacionais (PostgreSQL) com dados semiestruturados (XML) através de uma aplicação 
-                Java Spring Boot.
-            </p>
-            <div class="project-tech">
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">XML</span>
-                <span class="tech-tag">PostgresSQL</span>
-                <span class="tech-tag">Docker</span>
-            </div>
-            <a class="btn-secondary project-btn" href="https://github.com/eduardoo-ely/xml-relational-integration" target="_blank">Ver no Github</a>
-            <div class="project-line"></div>
-        </div>
-    </div>
-</section>
-</div>
-
-<!-- Learning Path Section -->
-<div class="section-dark">
-    <section id="aprendizado" class="section fade-in-up">
-        <h2 class="section-title">Roadmap de Carreira em Dados</h2>
-        <p class="section-subtitle">Minha jornada: Data Analyst → DBA → ETL → Engenharia de Dados</p>
-
-        <div class="learning-grid">
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">📊</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Análise de Dados</h3>
-                            <span class="learning-status status-progress">Em Progresso</span>
-                        </div>
-                        <p class="learning-description">MariaDB, Looker, SQL avançado e geração de insights estratégicos no dia a dia na IXC Soft</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">🐍</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Python para Dados</h3>
-                            <span class="learning-status status-progress">Em Progresso</span>
-                        </div>
-                        <p class="learning-description">Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebooks e manipulação de datasets</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">📈</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Visualização de Dados</h3>
-                            <span class="learning-status status-progress">Em Progresso</span>
-                        </div>
-                        <p class="learning-description">Looker (em uso), Power BI, Tableau, dashboards interativos e storytelling com dados</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">🗄️</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">DBA (Database Administrator)</h3>
-                            <span class="learning-status status-next">Próximo Passo</span>
-                        </div>
-                        <p class="learning-description">Administração avançada de bancos, performance tuning, backup, recovery e alta disponibilidade</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">🔄</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">ETL & Data Engineering</h3>
-                            <span class="learning-status status-next">Próximo Passo</span>
-                        </div>
-                        <p class="learning-description">Pipelines de dados, Apache Airflow, integração e transformação de dados em escala</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">☁️</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Cloud Data Platforms</h3>
-                            <span class="learning-status status-planned">Planejado</span>
-                        </div>
-                        <p class="learning-description">AWS/Azure para dados, Data Lakes, Data Warehouses e soluções em nuvem</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">⚖️</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Governança de Dados</h3>
-                            <span class="learning-status status-future">Meta Futura</span>
-                        </div>
-                        <p class="learning-description">Qualidade de dados, segurança, compliance (LGPD), políticas e estratégia organizacional</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="learning-card">
-                <div class="learning-content">
-                    <span class="learning-icon">🔐</span>
-                    <div style="flex: 1;">
-                        <div class="learning-header">
-                            <h3 class="learning-title">Data Quality & LGPD</h3>
-                            <span class="learning-status status-future">Meta Futura</span>
-                        </div>
-                        <p class="learning-description">Qualidade, integridade, privacidade, auditoria e conformidade com legislação</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-<!-- Contact Section -->
-<section id="contato" class="section contact-container fade-in-up">
-    <h2 class="section-title">Vamos Construir Algo Juntos?</h2>
-    <p class="section-subtitle">
-        Interessado em colaborar em projetos de dados ou discutir oportunidades? Entre em contato!
-    </p>
-
-    <div class="contact-buttons">
-        <a href="https://linkedin.com/in/eduardoo-ely" target="_blank" class="contact-btn btn-linkedin">
-            <span style="font-size: 1.5rem;">💼</span>
-            <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/eduardoo-ely" target="_blank" class="contact-btn btn-github">
-            <span style="font-size: 1.5rem;">🔧</span>
-            <span>GitHub</span>
-        </a>
-        <a href="mailto:eduardooelly@gmail.com" class="contact-btn btn-email">
-            <span style="font-size: 1.5rem;">📧</span>
-            <span>Email</span>
-        </a>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>© 2026 Eduardo de Paula • Data Analyst Jr</p>
-</footer>
-
-<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-<script src="script.js"></script>
-<script type="module" src="three-bg.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="three-bg.js"></script>
 </body>
+
 </html>
