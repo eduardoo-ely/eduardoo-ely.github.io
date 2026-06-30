@@ -633,6 +633,8 @@ body {
     border-radius: 1rem;
     border: 1px solid rgba(148, 163, 184, 0.2);
     background: rgba(51, 65, 85, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.5s;
     min-height: 250px;
     overflow: hidden;
@@ -646,6 +648,8 @@ body {
 .project-featured {
     border-color: rgba(34, 197, 94, 0.45);
     background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 211, 238, 0.08));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 0 30px rgba(34, 197, 94, 0.12);
 }
 
